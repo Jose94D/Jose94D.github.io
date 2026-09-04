@@ -3,393 +3,591 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Manuel Dinamarca Ortega | Desarrollador Full Stack</title>
-    <!-- Metadatos de SEO y Redes Sociales -->
-    <meta name="description" content="Portafolio de Jose Manuel Dinamarca, Desarrollador Full Stack e Ingeniero de Datos especializado en C#, Python y Go.">
+    <title data-es="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-en="Jose Manuel Dinamarca Ortega | Full Stack Developer">Jose Manuel Dinamarca Ortega | Desarrollador Full Stack</title>
+    <meta name="description" content="Portfolio of Jose Manuel Dinamarca, Full Stack Developer and Data Engineer.">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- FontAwesome para iconos -->
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- ESTILOS GENERALES Y TEMA --- */
+        /* --- UI/UX MODERN VARIABLES & CONFIGURATION --- */
         :root {
-            --primary-blue: #0077b5;
-            --dark-gray: #333;
-            --light-gray: #f4f4f9;
-            --white: #fff;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --bg-color: #0f172a;        /* Elegant dark slate background */
+            --card-bg: #1e293b;         /* Container / card background */
+            --text-main: #f8fafc;       /* Very clear main text */
+            --text-muted: #94a3b8;      /* Muted secondary text */
+            --accent: #38bdf8;          /* Modern vibrant blue (cyan/sky) */
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;    /* Subtle borders */
+            --radius: 12px;
+            --transition: all 0.25s ease-in-out;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-align: justify;
         }
 
-        .container {
+        /* --- TOP NAVIGATION BAR --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        .nav-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        section {
-            padding: 60px 0;
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
-        h1, h2, h3 {
-            color: var(--dark-gray);
-            margin-top: 0;
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
         }
 
-        /* --- HEADER & TARJETA --- */
-        .header-section {
-            background-color: var(--white);
-            padding: 40px 0;
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-lang {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-lang:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* --- HERO SECTION / PROFILE --- */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        .profile-sidebar {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px;
             text-align: center;
-            box-shadow: var(--shadow);
         }
 
-        .presentation-card-container {
-            max-width: 900px;
-            margin: 0 auto 30px auto;
-            padding: 10px;
+        .profile-avatar-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
-        .presentation-card {
+        .profile-avatar-container img {
             width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            height: 100%;
+            object-fit: cover;
         }
 
-        .intro-heading h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+        .profile-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        .contact-row {
+        .profile-role {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            font-size: 1rem;
+            gap: 16px;
+            margin-top: 20px;
+            font-size: 1.2rem;
         }
 
-        .contact-item {
-            color: var(--primary-blue);
-            text-decoration: none;
-            display: flex;
+        .social-icons a {
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            text-align: left;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-cv {
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .lang-item {
-            color: var(--dark-gray);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* --- SOBRE MÍ --- */
-        .about-section {
-            background-color: var(--white);
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: start;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .profile-icon {
-            font-size: 5rem;
-            color: var(--primary-blue);
-            padding: 15px;
-            border: 3px solid var(--primary-blue);
-            border-radius: 50%;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-        }
-
-        /* --- PROYECTOS --- */
-        .projects-section {
-            background-color: var(--light-gray);
-        }
-
-        .project-cards-container {
-            display: grid;
-            grid-template-columns: 1fr; /* Centrado y con mayor espacio para un proyecto destacado */
-            max-width: 800px;
-            margin: 30px auto 0 auto;
-        }
-
-        .project-card {
-            background: var(--white);
-            padding: 30px;
+            gap: 10px;
+            background-color: var(--accent);
+            color: #0f172a;
+            padding: 10px 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            margin-top: 10px;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
+        .btn-cv:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
         }
 
-        .project-card h3 {
-            border-bottom: 2px solid var(--primary-blue);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+        /* --- GENERAL CONTENT SECTIONS --- */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
             font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+        }
+
+        .experience-item {
+            margin-bottom: 24px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-align: left;
+        }
+
+        .experience-company {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+            text-align: left;
+        }
+
+        .experience-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .experience-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            padding-left: 15px;
+            margin: 0;
+        }
+
+        .experience-desc li {
+            margin-bottom: 6px;
+        }
+
+        /* --- FEATURED PROJECT --- */
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            text-align: left;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 15px;
+            margin: 16px 0;
         }
 
         .tech-tag {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 5px 10px;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
-        /* Contenedor de captura de pantalla para el proyecto */
         .project-screenshot {
             width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            margin: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .project-details {
-            margin-top: 15px;
-            padding-left: 20px;
-        }
-
-        .project-details li {
-            margin-bottom: 8px;
-        }
-
-        /* --- HABILIDADES Y SKILLS --- */
-        .skills-section {
-            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            gap: 20px;
         }
 
-        .skill-category h3 {
-            font-size: 1.3rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .skill-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .skill-list li {
+        .skill-group h4 {
+            font-size: 0.95rem;
+            color: var(--accent);
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: left;
         }
 
-        .skill-list li i {
-            color: var(--primary-blue);
-            width: 20px;
+        .skill-group ul {
+            list-style: none;
+        }
+
+        .skill-group li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
             text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        /* --- FOOTER --- */
-        .contact-cta-section {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #004d73 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 0;
-        }
-
-        .contact-cta-section h2 {
-            color: var(--white);
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-cta-section p {
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--white);
-            color: var(--primary-blue);
-            padding: 12px 24px;
-            border-radius: 4px;
+        footer a {
+            color: var(--accent);
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #f1f1f1;
         }
 
         @media (max-width: 768px) {
-            .contact-row {
-                flex-direction: column;
-                gap: 10px;
+            .hero-grid {
+                grid-template-columns: 1fr;
             }
-            .about-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER & TARJETA DE PRESENTACIÓN -->
-    <header class="header-section">
-        <div class="container">
-            <div class="presentation-card-container">
-                <img src="tarjeta_presentacion.png" alt="Tarjeta de presentación: Jose Manuel Dinamarca Ortega" class="presentation-card">
-            </div>
-            
-            <div class="intro-heading">
-                <h1>Desarrollador de Software | Ingeniero en Computación e Informática</h1>
-                <div class="contact-row">
-                    <a href="https://linkedin.com/in/jose-dinamarca-ortega" class="contact-item" target="_blank">
-                        <i class="fab fa-linkedin"></i> linkedin.com/in/jose-dinamarca-ortega
-                    </a>
-                    <span class="lang-item">
-                        <i class="fas fa-globe"></i> Idiomas: Español (Nativo) | Inglés (Intermedio B2)
-                    </span>
-                </div>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Jose Manuel Dinamarca</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about" data-es="Perfil" data-en="Profile">Perfil</a></li>
+                    <li><a href="#experience" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+                    <li><a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+                    <li><a href="#skills" data-es="Habilidades" data-en="Skills">Habilidades</a></li>
+                </ul>
+                <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i> <span id="lang-text">EN</span>
+                </button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- SOBRE MÍ -->
-    <section class="about-section">
-        <div class="container">
-            <h2>Sobre Mí</h2>
-            <div class="about-content">
-                <i class="fas fa-user-tie profile-icon"></i>
-                <div class="about-text">
-                    <p>Soy Ingeniero en Computación e Informática y Técnico en Programación. Mi enfoque profesional está centrado en el Desarrollo Backend / Full Stack y la Ingeniería de Datos.</p>
-                    <p>Cuento con una sólida base teórica y práctica en el diseño de arquitecturas de software, seguridad, bases de datos relacionales y metodologías ágiles (Certificación Scrum). Además, mi experiencia como Docente Especialista en TI y Programación me ha permitido desarrollar habilidades avanzadas en: Code Review y Refactorización, Documentación Técnica, Resolución de Problemas.</p>
-                    <p>Busco integrarme en equipos dinámicos y entornos remotos que desafíen mis capacidades de desarrollo y optimización de código.</p>
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+
+        <!-- HERO SECTION / ABOUT ME -->
+        <section id="about" class="hero-grid">
+            <div class="profile-sidebar">
+                <div class="profile-avatar-container">
+                    <img src="avatar.jpg" alt="Jose Manuel Dinamarca Ortega">
+                </div>
+                <div class="profile-name">Jose Manuel Dinamarca</div>
+                <div class="profile-role" data-es="Desarrollador Full Stack" data-en="Full Stack Developer">Desarrollador Full Stack</div>
+                
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/jose-dinamarca-ortega" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Jose94D" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:jose.m.dinamarca@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- PROYECTOS -->
-    <section class="projects-section">
-        <div class="container">
-            <h2>Proyectos Destacados</h2>
-            <p>Implementación técnica orientada a la extracción de datos y automatización.</p>
+            <div class="hero-content">
+                <h1 data-es="Sobre mí" data-en="About Me">Sobre mí</h1>
+                <p data-es="Ingeniero en Computación y Desarrollador Full Stack con sólidas bases en diseño de arquitectura, bases de datos relacionales y metodologías ágiles (Scrum Certified). Experiencia comprobada en liderazgo técnico, control de calidad (QA) y resolución de problemas complejos." data-en="Computer Science Engineer and Full Stack Developer with solid foundations in architecture design, relational databases, and agile methodologies (Scrum Certified). Proven experience in technical leadership, quality assurance (QA), and complex problem solving.">Ingeniero en Computación y Desarrollador Full Stack con sólidas bases en diseño de arquitectura, bases de datos relacionales y metodologías ágiles (Scrum Certified). Experiencia comprobada en liderazgo técnico, control de calidad (QA) y resolución de problemas complejos.</p>
+                
+                <p data-es="Altamente motivado por entornos remotos y desarrollo de software escalable, aportando valor a través de la optimización de procesos, documentación técnica y trabajo en equipo colaborativo." data-en="Highly motivated by remote environments and scalable software development, delivering value through process optimization, technical documentation, and collaborative teamwork.">Altamente motivado por entornos remotos y desarrollo de software escalable, aportando valor a través de la optimización de procesos, documentación técnica y trabajo en equipo colaborativo.</p>
+                
+                <a href="CV_Jose_Manuel_Dinamarca_V5.pdf" class="btn-cv" download>
+                    <i class="fas fa-download"></i> <span data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> <span data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</span></h2>
             
-            <div class="project-cards-container">
-                <div class="project-card">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="experience-item">
+                        <div class="experience-title" data-es="Consultor TI & Especialista en Soporte Técnico" data-en="IT Consultant & Technical Support Specialist">Consultor TI & Especialista en Soporte Técnico</div>
+                        <div class="experience-company" data-es="Independiente · Tiempo completo" data-en="Self Employed · Full-time">Independiente · Tiempo completo</div>
+                        <div class="experience-date" data-es="Mayo 2024 - Presente" data-en="May 2024 - Present">Mayo 2024 - Presente</div>
+                        <ul class="experience-desc">
+                            <li data-es="Prestación integral de servicios de consultoría informática y administración de redes para organizaciones locales." data-en="Deliver comprehensive IT consulting services and network administration for local organizations.">Prestación integral de servicios de consultoría informática y administración de redes para organizaciones locales.</li>
+                            <li data-es="Implementación de soluciones de impresión centralizada y configuración de sistemas de facturación electrónica." data-en="Implement centralized printing solutions and configure electronic billing systems to streamline daily operations.">Implementación de soluciones de impresión centralizada y configuración de sistemas de facturación electrónica.</li>
+                            <li data-es="Mantenimiento de hardware a medida e integraciones de software para optimizar entornos informáticos de los clientes." data-en="Provide tailored hardware maintenance and software integrations to optimize computing environments for clients.">Mantenimiento de hardware a medida e integraciones de software para optimizar entornos informáticos de los clientes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="experience-item" style="margin-bottom: 20px;">
+                        <div class="experience-title" data-es="Liderazgo Técnico y Control de Calidad (Instructor)" data-en="Technical Leadership and Quality Control (Instructor)">Liderazgo Técnico y Control de Calidad (Instructor)</div>
+                        <div class="experience-company">CFT San Agustín / CFT Estatal del Maule</div>
+                        <div class="experience-date" data-es="Mar 2024 - Presente" data-en="Mar 2024 - Present">Mar 2024 - Presente</div>
+                        <p class="experience-desc" data-es="Revisiones de código bajo estándares SOLID, Clean Code y patrones de diseño para más de 40 arquitecturas de software. Tutoría en refactorización y resolución de problemas técnicos complejos." data-en="Code reviews under SOLID standards, Clean Code, and design patterns for over 40 software architectures. Mentoring in refactoring and complex technical problem-solving." style="padding-left: 0;">Revisiones de código bajo estándares SOLID, Clean Code y patrones de diseño para más de 40 arquitecturas de software. Tutoría en refactorización y resolución de problemas técnicos complejos.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-title" data-es="Técnico TI y Soporte" data-en="IT Technician & Support">Técnico TI y Soporte</div>
+                        <div class="experience-company">Liceo Nuestra Señora del Rosario</div>
+                        <div class="experience-date" data-es="Mar 2023 - Feb 2024" data-en="Mar 2023 - Feb 2024">Mar 2023 - Feb 2024</div>
+                        <p class="experience-desc" data-es="Administración de infraestructura TI, servidores y redes. Implementación de políticas de seguridad con PfSense logrando una reducción del 35% en incidentes de red." data-en="Administration of IT infrastructure, servers, and networks. Implementation of security policies with PfSense achieving a 35% reduction in network incidents." style="padding-left: 0;">Administración de infraestructura TI, servidores y redes. Implementación de políticas de seguridad con PfSense logrando una reducción del 35% en incidentes de red.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2 class="section-title"><i class="fas fa-code-branch"></i> <span data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</span></h2>
+            
+            <div class="project-card">
+                <div class="project-info">
                     <h3>GunplaScrapper-Chile</h3>
+                    <p data-es="Herramienta de automatización y Web Scraping para monitoreo de mercado en tiempo real de coleccionables en Chile. Desarrollo enfocado en extracción de datos, procesamiento y centralización de información." data-en="Automation and Web Scraping tool for real-time market monitoring of collectibles in Chile. Development focused on data extraction, processing, and information centralization from multiple e-commerce sources." style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Herramienta de automatización y Web Scraping para monitoreo de mercado en tiempo real de coleccionables en Chile. Desarrollo enfocado en extracción de datos, procesamiento y centralización de información.</p>
+                    
                     <div class="tech-stack">
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Web Scraping</span>
-                        <span class="tech-tag">Data Engineering</span>
-                        <span class="tech-tag">Automation</span>
+                        <span class="tech-tag">Requests</span>
+                        <span class="tech-tag">BeautifulSoup</span>
+                        <span class="tech-tag">Pandas</span>
                     </div>
-                    <p><strong>Descripción del Desafío:</strong> Sistema automatizado diseñado para la extracción y procesamiento estructurado de información de productos de coleccionismo desde tiendas especializadas en Chile.</p>
-                    
-                    <!-- Espacio para tu captura de pantalla -->
-                    <!-- Reemplaza 'captura_gunpla.png' por el nombre del archivo de imagen que subas a tu repositorio -->
-                    <img src="captura_gunpla.jpg" alt="Captura de funcionamiento de GunplaScrapper-Chile" class="project-screenshot">
 
-                    <p><strong>Aspectos técnicos destacados:</strong></p>
-                    <ul class="project-details">
-                        <li><strong>Estrategia de Extracción:</strong> Manejo de peticiones HTTP robustas y parseo eficiente para evitar bloqueos y asegurar la integridad de los datos obtenidos.</li>
-                        <li><strong>Estructuración de Datos:</strong> Limpieza, transformación y normalización de catálogos para su posterior análisis o exportación.</li>
-                        <li><strong>Mantenibilidad:</strong> Arquitectura modular orientada a facilitar la incorporación de nuevas fuentes de datos de comercio electrónico.</li>
-                    </ul>
-
-                    <div style="margin-top: 20px;">
-                        <a href="https://github.com/Jose94D/GunplaScrapper-Chile" class="contact-item" target="_blank">
-                            <i class="fab fa-github"></i> Ver repositorio en GitHub
+                    <div style="margin-top: 16px;">
+                        <a href="https://github.com/Jose94D/GunplaScrapper-Chile" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                            <i class="fab fa-github"></i> <span data-es="Ver repositorio en GitHub" data-en="View repository on GitHub">Ver repositorio en GitHub</span>
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- TECNOLOGÍAS, CERTIFICACIONES, INTERESES -->
-    <section class="skills-section">
-        <div class="container">
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3>Tecnologías y Herramientas</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-code"></i><strong>Lenguajes:</strong> Python, C#, Go Lang, Java, JavaScript</li>
-                        <li><i class="fas fa-database"></i><strong>Bases de Datos:</strong> PostgreSQL, MySQL, Oracle, MongoDB</li>
-                        <li><i class="fas fa-layer-group"></i><strong>Web / Full Stack:</strong> NodeJS, ReactJS, Vue, Jakarta Enterprise</li>
-                        <li><i class="fas fa-tools"></i><strong>Herramientas:</strong> Git, Docker, PfSense, Power BI</li>
-                    </ul>
+                <div>
+                    <img src="captura_gunpla.jpg" alt="GunplaScrapper-Chile Preview" class="project-screenshot">
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & EDUCATION SECTION -->
+        <section id="skills">
+            <h2 class="section-title"><i class="fas fa-layer-group"></i> <span data-es="Stack Técnico y Educación" data-en="Technical Stack & Education">Stack Técnico y Educación</span></h2>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 data-es="Conocimientos Técnicos" data-en="Technical Knowledge" style="font-size: 1.1rem; margin-bottom: 16px; color: var(--text-main); text-align: left;">Conocimientos Técnicos</h3>
+                    <div class="skills-grid" style="grid-template-columns: 1fr;">
+                        <div class="skill-group">
+                            <h4 data-es="Lenguajes y Backend" data-en="Languages & Backend">Lenguajes y Backend</h4>
+                            <ul>
+                                <li>Python, NodeJS, Java, C#, C++, Go Lang</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group" style="margin-top: 12px;">
+                            <h4 data-es="Frontend y Web" data-en="Frontend & Web">Frontend y Web</h4>
+                            <ul>
+                                <li>JavaScript, ReactJS, Vue, HTML/CSS</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group" style="margin-top: 12px;">
+                            <h4 data-es="Bases de Datos e Infraestructura" data-en="Databases & Infrastructure">Bases de Datos e Infraestructura</h4>
+                            <ul>
+                                <li>PostgreSQL, MySQL, Oracle, MongoDB</li>
+                                <li>Git, Docker, PfSense (Avanzado), Linux</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3>Certificaciones</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-certificate"></i> Scrum Fundamentals Certified (SFC) - SCRUMstudy</li>
-                    </ul>
-
-                    <h3>Mis Intereses</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-vial"></i> Arquitectura de Software & Backend</li>
-                        <li><i class="fas fa-shield-alt"></i> Seguridad de Software</li>
-                        <li><i class="fas fa-microchip"></i> Automatización y DIY Tech</li>
-                    </ul>
+                <div class="card">
+                    <h3 data-es="Educación y Certificaciones" data-en="Education & Certifications" style="font-size: 1.1rem; margin-bottom: 16px; color: var(--text-main); text-align: left;">Educación y Certificaciones</h3>
+                    <div class="skills-grid" style="grid-template-columns: 1fr; gap: 16px;">
+                        <div>
+                            <strong data-es="Ingeniería en Computación" data-en="Computer Science Engineering" style="font-size: 0.95rem; color: var(--text-main);">Ingeniería en Computación</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); text-align: left;">Universidad Católica del Maule (2021-2023)</p>
+                        </div>
+                        <div>
+                            <strong data-es="Técnico en Programación y Análisis" data-en="Programming and Analysis Technician" style="font-size: 0.95rem; color: var(--text-main);">Técnico en Programación y Análisis</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); text-align: left;">CFT San Agustín (2018-2021)</p>
+                        </div>
+                        <div>
+                            <strong style="font-size: 0.95rem; color: var(--text-main);">Scrum Fundamentals Certified (SFC)</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); text-align: left;">SCRUMstudy (2024)</p>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACTO FINAL -->
-    <footer class="contact-cta-section">
-        <div class="container">
-            <h2>¡Gracias por visitar mi perfil!</h2>
-            <p>Si quieres colaborar en un proyecto o estás buscando un desarrollador enfocado en código limpio y buenas prácticas, no dudes en contactarme.</p>
-            <a href="mailto:jose.m.dinamarca@gmail.com" class="btn call-to-action">
-                <i class="fas fa-envelope"></i> Contactar por Email
-            </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="main-container" style="margin: 0 auto; padding: 0 24px;">
+            <p data-es="Diseñado por Jose Manuel Dinamarca Ortega" data-en="Designed with UI/UX focus | Jose Manuel Dinamarca Ortega">Diseñado con enfoque UI/UX | Jose Manuel Dinamarca Ortega</p>
+            <p style="margin-top: 8px;"><a href="mailto:jose.m.dinamarca@gmail.com" data-es="Conectemos vía Email" data-en="Let's connect via Email">Conectemos vía Email</a></p>
         </div>
     </footer>
+
+    <!-- JAVASCRIPT FOR LANGUAGE TOGGLE -->
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            // Cambiamos el idioma destino
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            
+            // Si el idioma actual es Inglés, el botón debe ofrecer cambiar a Español ('ES'). 
+            // Si el idioma actual es Español, el botón debe ofrecer cambiar a Inglés ('EN').
+            document.getElementById('lang-text').innerText = currentLang === 'es' ? 'EN' : 'ES';
+            document.documentElement.lang = currentLang;
+
+            // Buscar todos los elementos que contengan los atributos de traducción
+            const elements = document.querySelectorAll('[data-es], [data-en]');
+            
+            elements.forEach(el => {
+                if (currentLang === 'en' && el.getAttribute('data-en')) {
+                    el.innerText = el.getAttribute('data-en');
+                } else if (currentLang === 'es' && el.getAttribute('data-es')) {
+                    el.innerText = el.getAttribute('data-es');
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
