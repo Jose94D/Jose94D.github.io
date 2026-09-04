@@ -12,15 +12,17 @@
     <style>
         /* --- UI/UX MODERN VARIABLES & CONFIGURATION --- */
         :root {
-            --bg-color: #0f172a;        /* Elegant dark slate background */
-            --card-bg: #1e293b;         /* Container / card background */
+            --bg-color: #0b0f19;        /* Deep immersive background */
+            --card-bg: rgba(22, 27, 46, 0.82); /* Glassmorphism card container */
+            --card-hover-bg: rgba(30, 41, 59, 0.9);
             --text-main: #f8fafc;       /* Very clear main text */
             --text-muted: #94a3b8;      /* Muted secondary text */
-            --accent: #38bdf8;          /* Modern vibrant blue (cyan/sky) */
+            --accent: #38bdf8;          /* Vibrant tech cyan/sky */
             --accent-hover: #0ea5e9;
-            --border-color: #334155;    /* Subtle borders */
-            --radius: 12px;
-            --transition: all 0.25s ease-in-out;
+            --border-color: rgba(51, 65, 85, 0.6);    /* Subtle frosted borders */
+            --border-glow: rgba(56, 189, 248, 0.4);
+            --radius: 14px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -31,7 +33,11 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
+            /* Fondo corporativo tecnológico con la imagen background.png */
+            background: linear-gradient(to bottom, rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
@@ -43,8 +49,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
+            background-color: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 16px 0;
         }
@@ -88,10 +94,11 @@
 
         .nav-links a:hover {
             color: var(--accent);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
         }
 
         .btn-lang {
-            background: transparent;
+            background: rgba(30, 41, 59, 0.5);
             border: 1px solid var(--border-color);
             color: var(--text-main);
             padding: 6px 12px;
@@ -108,6 +115,7 @@
         .btn-lang:hover {
             border-color: var(--accent);
             color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
         }
 
         /* --- MAIN CONTAINER --- */
@@ -128,10 +136,12 @@
 
         .profile-sidebar {
             background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             padding: 30px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .profile-avatar-container {
@@ -141,7 +151,7 @@
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid var(--accent);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
         }
 
         .profile-avatar-container img {
@@ -158,7 +168,8 @@
 
         .profile-role {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--accent);
+            font-weight: 500;
             margin-bottom: 20px;
         }
 
@@ -177,6 +188,7 @@
 
         .social-icons a:hover {
             color: var(--accent);
+            transform: translateY(-2px);
         }
 
         .hero-content h1 {
@@ -199,19 +211,21 @@
             align-items: center;
             gap: 10px;
             background-color: var(--accent);
-            color: #0f172a;
-            padding: 10px 20px;
+            color: #0b0f19;
+            padding: 12px 22px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
             margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
         }
 
         .btn-cv:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
         }
 
         /* --- GENERAL CONTENT SECTIONS --- */
@@ -229,6 +243,11 @@
             align-items: center;
             gap: 10px;
             text-align: left;
+            color: var(--text-main);
+        }
+
+        .section-title i {
+            color: var(--accent);
         }
 
         .grid-2 {
@@ -239,14 +258,19 @@
 
         .card {
             background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             padding: 24px;
             transition: var(--transition);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
         .card:hover {
-            border-color: var(--accent);
+            border-color: var(--border-glow);
+            background-color: var(--card-hover-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
 
         .experience-item {
@@ -293,6 +317,7 @@
         /* --- FEATURED PROJECT --- */
         .project-card {
             background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
             padding: 30px;
@@ -300,6 +325,13 @@
             grid-template-columns: 1fr 320px;
             gap: 30px;
             align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: var(--border-glow);
+            background-color: var(--card-hover-bg);
         }
 
         .project-info h3 {
@@ -317,20 +349,25 @@
         }
 
         .tech-tag {
-            background-color: rgba(56, 189, 248, 0.1);
+            background-color: rgba(56, 189, 248, 0.12);
             color: var(--accent);
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
         .project-screenshot {
             width: 100%;
             border-radius: 8px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: var(--transition);
+        }
+
+        .project-screenshot:hover {
+            transform: scale(1.02);
         }
 
         .skills-grid {
@@ -358,17 +395,101 @@
             margin-bottom: 6px;
         }
 
+        /* --- SECTION DIVIDER --- */
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 60px 0;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-text h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .contact-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            text-align: left;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 16px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            background-color: rgba(30, 41, 59, 0.95);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+        }
+
+        .btn-submit {
+            background-color: var(--accent);
+            color: #0b0f19;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 40px 0;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
+            background-color: rgba(11, 15, 25, 0.9);
         }
 
         @media (max-width: 768px) {
@@ -379,6 +500,9 @@
                 grid-template-columns: 1fr;
             }
             .project-card {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
             .nav-links {
@@ -399,6 +523,7 @@
                     <li><a href="#experience" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
                     <li><a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
                     <li><a href="#skills" data-es="Habilidades" data-en="Skills">Habilidades</a></li>
+                    <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
                 </ul>
                 <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()">
                     <i class="fas fa-globe"></i> <span id="lang-text">EN</span>
@@ -432,7 +557,7 @@
                 
                 <p data-es="Altamente motivado por entornos remotos y desarrollo de software escalable, aportando valor a través de la optimización de procesos, documentación técnica y trabajo en equipo colaborativo." data-en="Highly motivated by remote environments and scalable software development, delivering value through process optimization, technical documentation, and collaborative teamwork.">Altamente motivado por entornos remotos y desarrollo de software escalable, aportando valor a través de la optimización de procesos, documentación técnica y trabajo en equipo colaborativo.</p>
                 
-                <a href="CV_Jose_Manuel_Dinamarca_V5.pdf" class="btn-cv" download>
+                <a href="CV_Jose_Manuel_Dinamarca.pdf" class="btn-cv" download>
                     <i class="fas fa-download"></i> <span data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</span>
                 </a>
             </div>
@@ -553,37 +678,61 @@
             </div>
         </section>
 
+        <!-- LINEA DIVISORIA -->
+        <hr class="section-divider">
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="contact-grid">
+                <div class="contact-text">
+                    <h2 data-es="Conversemos sobre tu próximo proyecto." data-en="Let's talk about your next project.">Conversemos sobre tu próximo proyecto.</h2>
+                    <p data-es="Hablemos de desarrollo, consultoría o nuevas oportunidades profesionales. Escríbeme y hagamos realidad tu idea." data-en="Let's talk about development, consulting, or new professional opportunities. Drop me a message and let's bring your idea to life.">Hablemos de desarrollo, consultoría o nuevas oportunidades profesionales. Escríbeme y hagamos realidad tu idea.</p>
+                </div>
+                <form action="https://formspree.io/f/mljeldzj" method="POST" class="contact-form">
+                    <input type="text" name="name" required placeholder="Nombre" data-es-placeholder="Nombre" data-en-placeholder="Name">
+                    <input type="email" name="email" required placeholder="Correo electrónico" data-es-placeholder="Correo electrónico" data-en-placeholder="Email address">
+                    <textarea name="message" required placeholder="Cuéntame sobre tu proyecto..." data-es-placeholder="Cuéntame sobre tu proyecto..." data-en-placeholder="Tell me about your project..."></textarea>
+                    <button type="submit" class="btn-submit" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+
     </div>
 
     <!-- FOOTER -->
     <footer>
         <div class="main-container" style="margin: 0 auto; padding: 0 24px;">
-            <p data-es="Diseñado por Jose Manuel Dinamarca Ortega" data-en="Designed by Jose Manuel Dinamarca Ortega">Diseñado con enfoque UI/UX | Jose Manuel Dinamarca Ortega</p>
-            <p style="margin-top: 8px;"><a href="mailto:jose.m.dinamarca@gmail.com" data-es="Conectemos vía Email" data-en="Let's connect via Email">Conectemos vía Email</a></p>
+            <p data-es="Diseñado por Jose Manuel Dinamarca Ortega" data-en="Designed by Jose Manuel Dinamarca Ortega">Diseñado por Jose Manuel Dinamarca Ortega</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR LANGUAGE TOGGLE -->
+    <!-- JAVASCRIPT FOR LANGUAGE TOGGLE & PLACEHOLDERS -->
     <script>
         let currentLang = 'es';
 
         function toggleLanguage() {
-            // Cambiamos el idioma destino
             currentLang = currentLang === 'es' ? 'en' : 'es';
             
-            // Si el idioma actual es Inglés, el botón debe ofrecer cambiar a Español ('ES'). 
-            // Si el idioma actual es Español, el botón debe ofrecer cambiar a Inglés ('EN').
             document.getElementById('lang-text').innerText = currentLang === 'es' ? 'EN' : 'ES';
             document.documentElement.lang = currentLang;
 
-            // Buscar todos los elementos que contengan los atributos de traducción
+            // Traducir textos estándar (innerText)
             const elements = document.querySelectorAll('[data-es], [data-en]');
-            
             elements.forEach(el => {
                 if (currentLang === 'en' && el.getAttribute('data-en')) {
                     el.innerText = el.getAttribute('data-en');
                 } else if (currentLang === 'es' && el.getAttribute('data-es')) {
                     el.innerText = el.getAttribute('data-es');
+                }
+            });
+
+            // Traducir placeholders de los inputs del formulario
+            const inputs = document.querySelectorAll('[data-es-placeholder], [data-en-placeholder]');
+            inputs.forEach(input => {
+                if (currentLang === 'en' && input.getAttribute('data-en-placeholder')) {
+                    input.setAttribute('placeholder', input.getAttribute('data-en-placeholder'));
+                } else if (currentLang === 'es' && input.getAttribute('data-es-placeholder')) {
+                    input.setAttribute('placeholder', input.getAttribute('data-es-placeholder'));
                 }
             });
         }
