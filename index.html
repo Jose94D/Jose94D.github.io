@@ -233,6 +233,8 @@
             flex-direction: column;
             justify-content: center;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden; /* Fix del desbordamiento del efecto de iluminación */
         }
 
         .profile-sidebar:hover {
@@ -351,6 +353,8 @@
             flex-direction: column;
             justify-content: center;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden; /* Fix del desbordamiento del efecto de iluminación */
         }
 
         .hero-content:hover {
@@ -394,6 +398,7 @@
             position: relative;
             overflow: hidden;
             border: 1px solid transparent;
+            cursor: pointer;
         }
 
         .btn-cv::after {
@@ -471,6 +476,7 @@
             overflow: hidden;
         }
 
+        /* Iluminación interactiva de las tarjetas */
         .card::before, .project-card::before, .contact-grid::before, .hero-content::before, .profile-sidebar::before {
             content: '';
             position: absolute;
@@ -1080,7 +1086,10 @@
                 
                 <p data-es="Altamente motivado por entornos remotos y desarrollo de software escalable, aportando valor a través de la optimización de procesos, documentación técnica y trabajo en equipo colaborativo." data-en="Highly motivated by remote environments and scalable software development, delivering value through process optimization, technical documentation, and collaborative teamwork.">Altamente motivado por entornos remotos y desarrollo de software escalable, aportando valor a través de la optimización de procesos, documentación técnica y trabajo en equipo colaborativo.</p>
                 
-                <a href="CV_Jose_Manuel_Dinamarca.pdf" class="btn-cv" download>
+                <!-- Botón de CV con atributos data-href dinámicos -->
+                <a href="CV_Jose_Manuel_Dinamarca_ES.pdf" id="btn-cv" class="btn-cv" download 
+                   data-href-es="CV_Jose_Manuel_Dinamarca_ES.pdf" 
+                   data-href-en="CV_Jose_Manuel_Dinamarca_EN.pdf">
                     <i class="fas fa-download"></i> <span data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</span>
                 </a>
             </div>
@@ -1257,7 +1266,7 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT INTEGRADO (Sin archivos externos requeridos) -->
+    <!-- JAVASCRIPT INTEGRADO -->
     <script>
         let currentLang = 'es';
 
@@ -1332,6 +1341,12 @@
                     : (submitBtn.getAttribute('data-en-loading') || '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...');
             }
 
+            // Actualizar URL del CV según el idioma
+            const btnCv = document.getElementById('btn-cv');
+            if (btnCv) {
+                btnCv.href = currentLang === 'es' ? btnCv.getAttribute('data-href-es') : btnCv.getAttribute('data-href-en');
+            }
+
             // 6. Actualizar la URL de forma silenciosa para admitir enlaces directos ?lang=en
             const url = new URL(window.location);
             if (currentLang === 'en') {
@@ -1376,6 +1391,28 @@
                 }
             });
         });
+
+        // Feedback al descargar el CV
+        const cvDownloadBtn = document.getElementById('btn-cv');
+        if (cvDownloadBtn) {
+            cvDownloadBtn.addEventListener('click', function(e) {
+                const icon = this.querySelector('i');
+                const span = this.querySelector('span');
+                const originalIconClass = icon.className;
+
+                // Modificar UI a estado de carga (Spinner y texto temporal)
+                icon.className = 'fas fa-spinner fa-spin';
+                span.innerText = currentLang === 'es' ? 'Descargando...' : 'Downloading...';
+                this.style.pointerEvents = 'none';
+
+                // Restaurar el botón a los 2.5 segundos
+                setTimeout(() => {
+                    icon.className = originalIconClass;
+                    span.innerText = currentLang === 'es' ? span.getAttribute('data-es') : span.getAttribute('data-en');
+                    this.style.pointerEvents = 'auto';
+                }, 2500);
+            });
+        }
 
         // Envío asíncrono del formulario (Formspree)
         async function handleFormSubmit(event) {
