@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-es="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-en="Jose Manuel Dinamarca Ortega | Full Stack Developer">Jose Manuel Dinamarca Ortega | Desarrollador Full Stack</title>
     <meta name="description" content="Portfolio of Jose Manuel Dinamarca, Full Stack Developer and Data Engineer.">
+    
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jose94d.github.io/TU_REPOSITORIO/">
+    <meta property="og:title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack">
+    <meta property="og:description" content="Ingeniero en Computación y Desarrollador Full Stack. Conoce mi experiencia y proyectos.">
+    <meta property="og:image" content="https://jose94d.github.io/TU_REPOSITORIO/preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jose94d.github.io/TU_REPOSITORIO/">
+    <meta property="twitter:title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack">
+    <meta property="twitter:description" content="Ingeniero en Computación y Desarrollador Full Stack. Conoce mi experiencia y proyectos.">
+    <meta property="twitter:image" content="https://jose94d.github.io/TU_REPOSITORIO/preview.jpg">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- FontAwesome for icons (Optimized for Render Blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
+
     <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         /* --- UI/UX REFINED 10/10 VARIABLES & CONFIGURATION --- */
         :root {
@@ -929,6 +950,20 @@
         }
 
         @media (max-width: 768px) {
+            /* Fix renderizado de imagen de fondo en dispositivos móviles */
+            body {
+                background-attachment: scroll;
+            }
+
+            /* Desactiva la capa del reflector en móviles para evitar tirones de rendimiento */
+            .card::before, 
+            .project-card::before, 
+            .contact-grid::before, 
+            .hero-content::before, 
+            .profile-sidebar::before {
+                display: none !important;
+            }
+
             .main-container, .nav-container, .footer-container {
                 padding-left: 16px;
                 padding-right: 16px;
@@ -985,9 +1020,15 @@
                 <div class="profile-role" data-es="Desarrollador Full Stack" data-en="Full Stack Developer">Desarrollador Full Stack</div>
                 
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/jose-dinamarca-ortega" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Jose94D" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="mailto:jose.m.dinamarca@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/jose-dinamarca-ortega" target="_blank" title="LinkedIn" aria-label="Visitar perfil de LinkedIn de Jose Manuel">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/Jose94D" target="_blank" title="GitHub" aria-label="Visitar perfil de GitHub de Jose Manuel">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:jose.m.dinamarca@gmail.com" title="Email" aria-label="Enviar correo electrónico a Jose Manuel">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
 
@@ -1228,8 +1269,10 @@
             }
         }
 
-        // Spotlight Effect Mouse Tracking
+        // Spotlight Effect Mouse Tracking (Solo en dispositivos de escritorio)
         document.addEventListener('mousemove', e => {
+            if (window.innerWidth <= 768 || window.matchMedia('(hover: none)').matches) return;
+
             const cards = document.querySelectorAll('.card, .project-card, .contact-grid, .hero-content, .profile-sidebar');
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
@@ -1248,7 +1291,6 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 if (pageYOffset >= (sectionTop - 150)) {
                     current = section.getAttribute('id');
                 }
@@ -1297,7 +1339,7 @@
             } catch (error) {
                 alert(currentLang === 'es' ? successDiv.getAttribute('data-es-connection-error') : successDiv.getAttribute('data-en-connection-error'));
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnTest || originalBtnText;
+                submitBtn.innerHTML = originalBtnText;
             }
         }
     </script>
