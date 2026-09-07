@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-es="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-en="Jose Manuel Dinamarca Ortega | Full Stack Developer">Jose Manuel Dinamarca Ortega | Desarrollador Full Stack</title>
-    <meta name="description" content="Portfolio of Jose Manuel Dinamarca, Full Stack Developer and Data Engineer.">
+    
+    <!-- SEO y Metadatos iniciales (Español) -->
+    <title id="page-title" data-es="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-en="Jose Manuel Dinamarca Ortega | Full Stack Developer">Jose Manuel Dinamarca Ortega | Desarrollador Full Stack</title>
+    <meta name="description" id="meta-desc" content="Portfolio of Jose Manuel Dinamarca, Full Stack Developer and Data Engineer." data-es="Ingeniero en Computación y Desarrollador Full Stack. Explora mi experiencia profesional, habilidades técnicas y proyectos." data-en="Computer Science Engineer and Full Stack Developer. Explore my professional experience, technical skills, and projects.">
     
     <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jose94d.github.io/">
-    <meta property="og:title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack">
-    <meta property="og:description" content="Ingeniero en Computación y Desarrollador Full Stack. Explora mi experiencia profesional, habilidades técnicas y proyectos.">
+    <meta property="og:title" id="og-title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-es="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-en="Jose Manuel Dinamarca Ortega | Full Stack Developer">
+    <meta property="og:description" id="og-desc" content="Ingeniero en Computación y Desarrollador Full Stack. Explora mi experiencia profesional, habilidades técnicas y proyectos." data-es="Ingeniero en Computación y Desarrollador Full Stack. Explora mi experiencia profesional, habilidades técnicas y proyectos." data-en="Computer Science Engineer and Full Stack Developer. Explore my professional experience, technical skills, and projects.">
     <meta property="og:image" content="https://jose94d.github.io/preview.jpg">
 
     <!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:url" content="https://jose94d.github.io/">
-	<meta name="twitter:title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack">
-	<meta name="twitter:description" content="Ingeniero en Computación y Desarrollador Full Stack. Explora mi experiencia profesional, habilidades técnicas y proyectos.">
+	<meta name="twitter:title" id="tw-title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-es="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack" data-en="Jose Manuel Dinamarca Ortega | Full Stack Developer">
+	<meta name="twitter:description" id="tw-desc" content="Ingeniero en Computación y Desarrollador Full Stack. Explora mi experiencia profesional, habilidades técnicas y proyectos." data-es="Ingeniero en Computación y Desarrollador Full Stack. Explora mi experiencia profesional, habilidades técnicas y proyectos." data-en="Computer Science Engineer and Full Stack Developer. Explore my professional experience, technical skills, and projects.">
 	<meta name="twitter:image" content="https://jose94d.github.io/preview.jpg">
 
+    <!-- SEO Multilingüe (Hreflang para GitHub Pages) -->
+    <link rel="alternate" hreflang="es" href="https://jose94d.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://jose94d.github.io/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://jose94d.github.io/" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
     
     <!-- FontAwesome for icons -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -1250,16 +1257,45 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR LANGUAGE TOGGLE, SPOTLIGHT & AJAX FORM -->
+    <!-- JAVASCRIPT INTEGRADO (Sin archivos externos requeridos) -->
     <script>
         let currentLang = 'es';
 
         function toggleLanguage() {
             currentLang = currentLang === 'es' ? 'en' : 'es';
             
-            document.getElementById('lang-text').innerText = currentLang === 'es' ? 'EN' : 'ES';
+            // 1. Cambiar atributo de idioma del HTML y UI del botón
             document.documentElement.lang = currentLang;
+            document.getElementById('lang-text').innerText = currentLang === 'es' ? 'EN' : 'ES';
 
+            // 2. Actualizar SEO y Metadatos Dinámicos en el <head>
+            const titleEl = document.getElementById('page-title');
+            const descEl = document.getElementById('meta-desc');
+            const ogTitleEl = document.getElementById('og-title');
+            const ogDescEl = document.getElementById('og-desc');
+            const twTitleEl = document.getElementById('tw-title');
+            const twDescEl = document.getElementById('tw-desc');
+
+            if (titleEl && titleEl.getAttribute(`data-${currentLang}`)) {
+                titleEl.innerText = titleEl.getAttribute(`data-${currentLang}`);
+            }
+            if (descEl && descEl.getAttribute(`data-${currentLang}`)) {
+                descEl.setAttribute('content', descEl.getAttribute(`data-${currentLang}`));
+            }
+            if (ogTitleEl && ogTitleEl.getAttribute(`data-${currentLang}`)) {
+                ogTitleEl.setAttribute('content', ogTitleEl.getAttribute(`data-${currentLang}`));
+            }
+            if (ogDescEl && ogDescEl.getAttribute(`data-${currentLang}`)) {
+                ogDescEl.setAttribute('content', ogDescEl.getAttribute(`data-${currentLang}`));
+            }
+            if (twTitleEl && twTitleEl.getAttribute(`data-${currentLang}`)) {
+                twTitleEl.setAttribute('content', twTitleEl.getAttribute(`data-${currentLang}`));
+            }
+            if (twDescEl && twDescEl.getAttribute(`data-${currentLang}`)) {
+                twDescEl.setAttribute('content', twDescEl.getAttribute(`data-${currentLang}`));
+            }
+
+            // 3. Traducir textos del cuerpo de la página
             const elements = document.querySelectorAll('[data-es], [data-en]');
             elements.forEach(el => {
                 if (currentLang === 'en' && el.getAttribute('data-en')) {
@@ -1269,6 +1305,7 @@
                 }
             });
 
+            // 4. Traducir placeholders de formularios
             const inputs = document.querySelectorAll('[data-es-placeholder], [data-en-placeholder]');
             inputs.forEach(input => {
                 if (currentLang === 'en' && input.getAttribute('data-en-placeholder')) {
@@ -1278,6 +1315,7 @@
                 }
             });
 
+            // 5. Traducir etiquetas ARIA de accesibilidad
             const ariaElements = document.querySelectorAll('[data-es-aria], [data-en-aria]');
             ariaElements.forEach(el => {
                 if (currentLang === 'en' && el.getAttribute('data-en-aria')) {
@@ -1293,8 +1331,18 @@
                     ? (submitBtn.getAttribute('data-es-loading') || '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Enviando...')
                     : (submitBtn.getAttribute('data-en-loading') || '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...');
             }
+
+            // 6. Actualizar la URL de forma silenciosa para admitir enlaces directos ?lang=en
+            const url = new URL(window.location);
+            if (currentLang === 'en') {
+                url.searchParams.set('lang', 'en');
+            } else {
+                url.searchParams.delete('lang');
+            }
+            window.history.pushState({}, '', url);
         }
 
+        // Efecto spotlight del cursor en las tarjetas
         document.addEventListener('mousemove', e => {
             if (window.innerWidth <= 768 || window.matchMedia('(hover: none)').matches) return;
 
@@ -1308,6 +1356,7 @@
             });
         });
 
+        // Detector de sección activa en el menú de navegación
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -1328,6 +1377,7 @@
             });
         });
 
+        // Envío asíncrono del formulario (Formspree)
         async function handleFormSubmit(event) {
             event.preventDefault();
             const form = event.target;
@@ -1366,6 +1416,14 @@
                 submitBtn.innerHTML = originalBtnText;
             }
         }
+
+        // Auto-detección si el usuario entra mediante un enlace con ?lang=en
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('lang') === 'en') {
+                toggleLanguage();
+            }
+        });
     </script>
 </body>
 </html>
