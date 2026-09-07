@@ -8,41 +8,40 @@
     
     <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jose94d.github.io/TU_REPOSITORIO/">
+    <meta property="og:url" content="https://jose94d.github.io/">
     <meta property="og:title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack">
     <meta property="og:description" content="Ingeniero en Computación y Desarrollador Full Stack. Conoce mi experiencia y proyectos.">
-    <meta property="og:image" content="https://jose94d.github.io/TU_REPOSITORIO/preview.jpg">
+    <meta property="og:image" content="https://jose94d.github.io/preview.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jose94d.github.io/TU_REPOSITORIO/">
+    <meta property="twitter:url" content="https://jose94d.github.io/">
     <meta property="twitter:title" content="Jose Manuel Dinamarca Ortega | Desarrollador Full Stack">
     <meta property="twitter:description" content="Ingeniero en Computación y Desarrollador Full Stack. Conoce mi experiencia y proyectos.">
-    <meta property="twitter:image" content="https://jose94d.github.io/TU_REPOSITORIO/preview.jpg">
+    <meta property="twitter:image" content="https://jose94d.github.io/preview.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    <!-- FontAwesome for icons (Optimized for Render Blocking) -->
+    <!-- FontAwesome for icons -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </noscript>
 
-    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- UI/UX REFINED 10/10 VARIABLES & CONFIGURATION --- */
         :root {
-            --bg-color: #070913;        /* Immersive deep navy canvas */
-            --card-bg: rgba(17, 24, 39, 0.82); /* Deep frosted glass optimized for contrast */
+            --bg-color: #070913;
+            --card-bg: rgba(17, 24, 39, 0.82);
             --card-hover-bg: rgba(30, 41, 59, 0.90);
             --text-main: #f8fafc;       
-            --text-muted: #f1f5f9;      /* Enhanced contrast for WCAG AAA compliance */
-            --accent: #38bdf8;          /* Bright tech cyan */
+            --text-muted: #f1f5f9;
+            --accent: #38bdf8;
             --accent-glow: rgba(56, 189, 248, 0.25);
             --accent-hover: #0ea5e9;
             --border-color: rgba(51, 65, 85, 0.55);    
@@ -63,10 +62,11 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, rgba(7, 9, 19, 0.94) 0%, rgba(15, 23, 42, 0.96) 100%), url('background.png');
+            background: linear-gradient(135deg, rgba(7, 9, 19, 0.65) 0%, rgba(15, 23, 42, 0.75) 100%), url('background.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
             color: var(--text-main);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
@@ -74,7 +74,6 @@
             overflow-x: hidden;
         }
 
-        /* --- ACCESSIBILITY FOCUS STATES --- */
         a:focus-visible,
         button:focus-visible,
         input:focus-visible,
@@ -83,7 +82,6 @@
             outline-offset: 3px;
         }
 
-        /* --- GLOW DECORATIVO --- */
         .ambient-glow {
             position: absolute;
             width: 500px;
@@ -96,7 +94,6 @@
             pointer-events: none;
         }
 
-        /* --- TOP NAVIGATION BAR --- */
         .navbar {
             position: sticky;
             top: 0;
@@ -202,14 +199,12 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* --- MAIN CONTAINER --- */
         .main-container {
             max-width: 1140px;
             margin: 50px auto;
             padding: 0 clamp(20px, 4vw, 36px);
         }
 
-        /* --- HERO SECTION / PROFILE --- */
         .hero-grid {
             display: grid;
             grid-template-columns: 320px 1fr;
@@ -422,7 +417,6 @@
             100% { transform: translateX(100%); }
         }
 
-        /* --- GENERAL CONTENT SECTIONS --- */
         section {
             margin-bottom: 70px;
         }
@@ -470,7 +464,6 @@
             overflow: hidden;
         }
 
-        /* Spotlight Effect Base */
         .card::before, .project-card::before, .contact-grid::before, .hero-content::before, .profile-sidebar::before {
             content: '';
             position: absolute;
@@ -502,7 +495,6 @@
             box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
         }
 
-        /* --- UTILITY CLASSES REPLACING INLINE STYLES --- */
         .card-flex-start {
             display: flex;
             flex-direction: column;
@@ -568,7 +560,6 @@
             margin-bottom: 8px;
         }
 
-        /* --- FEATURED PROJECT --- */
         .project-card {
             background-color: var(--card-bg);
             backdrop-filter: blur(14px);
@@ -694,14 +685,12 @@
             transform: scale(1.04);
         }
 
-        /* --- SECTION DIVIDER --- */
         .section-divider {
             border: none;
             border-top: 1px solid var(--border-color);
             margin: 70px 0;
         }
 
-        /* --- CARDS CONTENT HEADERS & LISTS --- */
         .card-header-title {
             font-family: 'Plus Jakarta Sans', sans-serif; 
             font-size: 1.15rem; 
@@ -737,7 +726,6 @@
             margin: 0;
         }
 
-        /* --- CONTACT SECTION & INTERACTION STATES --- */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -929,6 +917,7 @@
             padding: 0 clamp(20px, 4vw, 36px);
         }
 
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 1024px) {
             .main-container, .nav-container, .footer-container {
                 padding-left: 24px;
@@ -939,23 +928,24 @@
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
             .project-card {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
             .contact-grid {
                 grid-template-columns: 1fr;
-                padding: 30px;
+                padding: 32px 24px;
+                gap: 30px;
             }
         }
 
         @media (max-width: 768px) {
-            /* Fix renderizado de imagen de fondo en dispositivos móviles */
             body {
                 background-attachment: scroll;
             }
 
-            /* Desactiva la capa del reflector en móviles para evitar tirones de rendimiento */
             .card::before, 
             .project-card::before, 
             .contact-grid::before, 
@@ -964,22 +954,67 @@
                 display: none !important;
             }
 
-            .main-container, .nav-container, .footer-container {
-                padding-left: 16px;
-                padding-right: 16px;
-                margin: 30px auto;
+            .main-container {
+                margin: 20px auto;
+                padding: 0 16px;
             }
+
             .grid-2 {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
+
+            .nav-container {
+                padding: 0 16px;
+            }
+            
             .nav-links {
                 display: none;
             }
+
             .hero-content {
-                padding: 30px 20px;
+                padding: 28px 20px;
             }
+
             .hero-content h1 {
-                font-size: 1.9rem;
+                font-size: 1.75rem;
+                letter-spacing: -0.5px;
+            }
+
+            .contact-text h2 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-sidebar {
+                padding: 24px 16px;
+            }
+
+            .card, .project-card {
+                padding: 20px 16px;
+            }
+
+            .btn-cv, .btn-submit {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .social-icons {
+                gap: 12px;
+            }
+
+            .tech-stack {
+                gap: 6px;
+            }
+
+            .tech-tag {
+                font-size: 0.72rem;
+                padding: 5px 10px;
             }
         }
     </style>
@@ -1049,7 +1084,6 @@
             <h2 class="section-title"><i class="fas fa-briefcase" aria-hidden="true"></i> <span data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</span></h2>
             
             <div class="grid-2">
-                <!-- Columna Izquierda: Consultor TI -->
                 <div class="card card-flex-start">
                     <div class="experience-item experience-item-flush">
                         <div class="experience-title" data-es="Consultor TI & Especialista en Soporte Técnico" data-en="IT Consultant & Technical Support Specialist">Consultor TI & Especialista en Soporte Técnico</div>
@@ -1063,7 +1097,6 @@
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Liderazgo Técnico + Técnico TI -->
                 <div class="card card-space-between">
                     <div class="experience-item experience-item-flush">
                         <div class="experience-title" data-es="Liderazgo Técnico y Control de Calidad (Instructor)" data-en="Technical Leadership and Quality Control (Instructor)">Liderazgo Técnico y Control de Calidad (Instructor)</div>
@@ -1122,7 +1155,6 @@
             <h2 class="section-title"><i class="fas fa-layer-group" aria-hidden="true"></i> <span data-es="Stack Técnico y Educación" data-en="Technical Stack & Education">Stack Técnico y Educación</span></h2>
             
             <div class="grid-2">
-                <!-- CUADRO IZQUIERDO -->
                 <div class="card">
                     <h3 data-es="Conocimientos Técnicos" data-en="Technical Knowledge" class="card-header-title">
                         <i class="fas fa-code" style="color: var(--accent); font-size: 1rem;" aria-hidden="true"></i> Conocimientos Técnicos
@@ -1151,7 +1183,6 @@
                     </div>
                 </div>
 
-                <!-- CUADRO DERECHO -->
                 <div class="card">
                     <h3 data-es="Educación y Certificaciones" data-en="Education & Certifications" class="card-header-title">
                         <i class="fas fa-graduation-cap" style="color: var(--accent); font-size: 1rem;" aria-hidden="true"></i> Educación y Certificaciones
@@ -1180,7 +1211,6 @@
             </div>
         </section>
 
-        <!-- LINEA DIVISORIA -->
         <hr class="section-divider">
 
         <!-- CONTACT SECTION -->
@@ -1230,7 +1260,6 @@
             document.getElementById('lang-text').innerText = currentLang === 'es' ? 'EN' : 'ES';
             document.documentElement.lang = currentLang;
 
-            // Update standard text contents
             const elements = document.querySelectorAll('[data-es], [data-en]');
             elements.forEach(el => {
                 if (currentLang === 'en' && el.getAttribute('data-en')) {
@@ -1240,7 +1269,6 @@
                 }
             });
 
-            // Update placeholders
             const inputs = document.querySelectorAll('[data-es-placeholder], [data-en-placeholder]');
             inputs.forEach(input => {
                 if (currentLang === 'en' && input.getAttribute('data-en-placeholder')) {
@@ -1250,7 +1278,6 @@
                 }
             });
 
-            // Update ARIA labels and attributes dynamically
             const ariaElements = document.querySelectorAll('[data-es-aria], [data-en-aria]');
             ariaElements.forEach(el => {
                 if (currentLang === 'en' && el.getAttribute('data-en-aria')) {
@@ -1260,7 +1287,6 @@
                 }
             });
 
-            // Update submit button text if it is currently in loading state during language switch
             const submitBtn = document.getElementById('submit-btn');
             if (submitBtn.disabled) {
                 submitBtn.innerHTML = currentLang === 'es' 
@@ -1269,7 +1295,6 @@
             }
         }
 
-        // Spotlight Effect Mouse Tracking (Solo en dispositivos de escritorio)
         document.addEventListener('mousemove', e => {
             if (window.innerWidth <= 768 || window.matchMedia('(hover: none)').matches) return;
 
@@ -1283,7 +1308,6 @@
             });
         });
 
-        // Active Scroll Spy for Navigation Links
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -1343,6 +1367,5 @@
             }
         }
     </script>
-
 </body>
 </html>
