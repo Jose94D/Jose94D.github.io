@@ -1,0 +1,99 @@
+@media (max-width: 1024px) {
+    .main-container, .nav-container, .footer-container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .project-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .card::before, 
+    .project-card::before, 
+    .contact-grid::before, 
+    .hero-content::before, 
+    .profile-sidebar::before {
+        display: none !important;
+    }
+
+    .main-container {
+        margin: 20px auto;
+        padding: 0 16px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 28px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem;
+        letter-spacing: -0.5px;
+    }
+
+    .contact-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-sidebar {
+        padding: 24px 16px;
+    }
+
+    .card, .project-card {
+        padding: 20px 16px;
+    }
+
+    .btn-cv, .btn-submit {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-icons {
+        gap: 12px;
+    }
+
+    .tech-stack {
+        gap: 6px;
+    }
+
+    .tech-tag {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+    }
+}
