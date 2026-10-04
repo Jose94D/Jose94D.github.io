@@ -1,0 +1,134 @@
+{
+  "icon": "fas fa-code-branch",
+  "title": {
+    "es": "Proyectos Destacados",
+    "en": "Featured Projects"
+  },
+  "projects": [
+    {
+      "name": "GunplaScraper-Chile",
+      "description": {
+        "es": "Herramienta de automatización y Web Scraping para monitoreo de mercado en tiempo real de coleccionables en Chile. Desarrollo enfocado en extracción de datos, procesamiento y centralización de información.",
+        "en": "Automation and Web Scraping tool for real-time market monitoring of collectibles in Chile. Development focused on data extraction, processing, and information centralization from multiple e-commerce sources."
+      },
+      "tags": [
+        {
+          "icon": "fab fa-python",
+          "label": "Python"
+        },
+        {
+          "icon": "fas fa-flask",
+          "label": "Flask"
+        },
+        {
+          "icon": "fas fa-database",
+          "label": "SQLite"
+        },
+        {
+          "icon": "fas fa-file-code",
+          "label": "Jinja2"
+        },
+        {
+          "icon": "fas fa-network-wired",
+          "label": "Requests"
+        },
+        {
+          "icon": "fas fa-code",
+          "label": "BeautifulSoup4"
+        },
+        {
+          "icon": "fas fa-clock",
+          "label": "APScheduler"
+        },
+        {
+          "icon": "fas fa-chart-line",
+          "label": "Chart.js"
+        }
+      ],
+      "repo": {
+        "url": "https://github.com/Jose94D/GunplaScrapper-Chile",
+        "label": {
+          "es": "Ver repositorio en GitHub",
+          "en": "View repository on GitHub"
+        }
+      },
+      "screenshots": [
+        "assets/img/captura_gunpla_1.png",
+        "assets/img/captura_gunpla_2.png",
+        "assets/img/captura_gunpla_3.png"
+      ],
+      "highlights": [
+        {
+          "es": "Plataforma que recolecta precios de 8 tiendas e-commerce chilenas cada 12 horas (scraping programado con APScheduler) y guarda el historial de más de 400 productos en SQLite.",
+          "en": "Platform that collects prices from 8 Chilean e-commerce stores every 12 hours (scheduled scraping with APScheduler) and keeps a price history of 400+ products in SQLite."
+        },
+        {
+          "es": "Arquitectura modular con Flask Blueprints, capa de acceso a datos y un scraper independiente por tienda, además de registro de acciones administrativas.",
+          "en": "Modular architecture with Flask Blueprints, a data access layer, and an independent scraper per store, plus logging of administrative actions."
+        },
+        {
+          "es": "Catálogo unificado que fusiona productos duplicados entre tiendas, con filtros, ordenamiento, paginación, gráficos de precios históricos y modo oscuro.",
+          "en": "Unified catalog that merges duplicate products across stores, with filters, sorting, pagination, historical price charts, and dark mode."
+        }
+      ]
+    },
+    {
+      "name": "DynamicLanding",
+      "description": {
+        "es": "DynamicLanding es un CMS modular desarrollado con Flask y SQLite para crear y administrar landing pages comerciales. Incluye un panel de administración para gestionar contenido, diseño, blog, SEO, redes sociales, visibilidad de módulos y analíticas de tráfico de forma sencilla y centralizada.",
+        "en": "DynamicLanding is a modular CMS built with Flask and SQLite to create and manage commercial landing pages. It includes an admin panel to manage content, design, blog, SEO, social media, module visibility, and traffic analytics in a simple, centralized way."
+      },
+      "highlights": [
+        {
+          "es": "CMS para crear y administrar landing pages comerciales, con panel privado con autenticación y un modelo de datos diseñado a medida.",
+          "en": "CMS to create and manage commercial landing pages, with a private authenticated admin panel and a custom-designed data model."
+        },
+        {
+          "es": "Blog con CRUD completo, control de visibilidad y orden de módulos, y configuración SEO (meta título, descripción y Open Graph) editable desde el panel, sin tocar código.",
+          "en": "Blog with full CRUD, module visibility and ordering controls, and SEO settings (meta title, description, and Open Graph) editable from the panel, no code changes required."
+        },
+        {
+          "es": "Módulo de analítica de tráfico con gráficos interactivos por año y mes.",
+          "en": "Traffic analytics module with interactive charts by year and month."
+        }
+      ],
+      "tags": [
+        {
+          "icon": "fab fa-python",
+          "label": "Python"
+        },
+        {
+          "icon": "fas fa-flask",
+          "label": "Flask"
+        },
+        {
+          "icon": "fas fa-database",
+          "label": "SQLite"
+        },
+        {
+          "icon": "fas fa-file-code",
+          "label": "Jinja2"
+        },
+        {
+          "icon": "fab fa-bootstrap",
+          "label": "Bootstrap"
+        },
+        {
+          "icon": "fas fa-chart-line",
+          "label": "Chart.js"
+        }
+      ],
+      "repo": {
+        "url": "https://github.com/Jose94D/DynamicLanding",
+        "label": {
+          "es": "Ver repositorio en GitHub",
+          "en": "View repository on GitHub"
+        }
+      },
+      "screenshots": [
+        "assets/img/captura_landing_1.png",
+        "assets/img/captura_landing_2.png"
+      ]
+    }
+  ]
+}

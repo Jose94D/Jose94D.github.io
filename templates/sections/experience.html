@@ -1,0 +1,14 @@
+{% import "_components.html" as ui %}
+        <section id="experience">
+            {{ ui.section_title(experience.icon, experience.title) }}
+
+            <div class="grid-2">
+                {% for card in experience.cards %}
+                <div class="card {{ card.layout }}">
+                    {% for job in card.jobs %}
+                    {{ ui.experience_item(job, loop.first) }}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>

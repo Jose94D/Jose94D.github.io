@@ -1,0 +1,72 @@
+{% import "_i18n.html" as i18n %}
+{% set m = site.meta %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="{{ m.google_site_verification }}">
+
+    <!-- SEO y Metadatos -->
+    <title id="page-title" {{ i18n.attrs(m.title) }}>{{ m.title.es }}</title>
+    {{ i18n.meta('name', 'description', m.description, 'meta-desc') }}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ m.url }}">
+    {{ i18n.meta('property', 'og:title', m.title, 'og-title') }}
+    {{ i18n.meta('property', 'og:description', m.description, 'og-desc') }}
+    <meta property="og:image" content="{{ m.image }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ m.url }}">
+    {{ i18n.meta('name', 'twitter:title', m.title, 'tw-title') }}
+    {{ i18n.meta('name', 'twitter:description', m.description, 'tw-desc') }}
+    <meta name="twitter:image" content="{{ m.image }}">
+
+    <link rel="canonical" href="{{ m.url }}">
+
+    <!-- Datos estructurados (schema.org) -->
+    {% set pr = site.person %}
+    {% set schema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": pr.name,
+        "jobTitle": pr.job_title,
+        "url": m.url,
+        "image": m.url ~ hero.avatar.src,
+        "email": "mailto:" ~ pr.email,
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": pr.address.locality,
+            "addressRegion": pr.address.region,
+            "addressCountry": pr.address.country
+        },
+        "alumniOf": pr.alumni_of,
+        "knowsAbout": pr.knows_about,
+        "sameAs": site.social | selectattr("external") | map(attribute="url") | list
+    } %}
+    <script type="application/ld+json">{{ schema | tojson }}</script>
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es" href="{{ m.url }}">
+    <link rel="alternate" hreflang="en" href="{{ m.url }}?lang=en">
+    <link rel="alternate" hreflang="x-default" href="{{ m.url }}">
+
+    <link rel="icon" type="image/x-icon" href="{{ m.favicon }}">
+
+    <!-- FontAwesome -->
+    <link rel="preload" href="{{ site.assets.font_awesome }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ site.assets.font_awesome }}">
+    </noscript>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{{ site.assets.google_fonts }}" rel="stylesheet">
+
+    <!-- CSS -->
+    {% for css in site.assets.stylesheets %}
+    <link rel="stylesheet" href="{{ css }}">
+    {% endfor %}
+</head>

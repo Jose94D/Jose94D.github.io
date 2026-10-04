@@ -1,0 +1,17 @@
+{% import "_components.html" as ui %}
+        <section id="skills">
+            {{ ui.section_title(skills.icon, skills.title) }}
+
+            <div class="grid-2">
+                {% for card in skills.cards %}
+                <div class="card">
+                    {{ ui.card_title(card.icon, card.title) }}
+                    <div class="card-inner-stack">
+                        {% for group in card.groups %}
+                        {{ ui.stack_group(group) }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>

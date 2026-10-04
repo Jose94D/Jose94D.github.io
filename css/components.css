@@ -725,3 +725,33 @@
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Utilidades (antes eran estilos inline en el HTML) */
+.stack-icon { color: var(--accent); font-size: 0.85rem; }
+.stack-icon--lg { font-size: 1rem; }
+.stack-item-desc--spaced { margin-top: 3px; }
+.project-actions { margin-top: 20px; }
+.project-link__icon { font-size: 1.1rem; }
+
+/* Tarjeta de perfil: stack y datos de contacto */
+.profile-stack { justify-content: center; flex-wrap: nowrap; gap: 6px; margin: 0; }
+.profile-stack .tech-tag { padding: 4px 9px; font-size: 0.72rem; white-space: nowrap; }
+/* Íconos ocultos para que los 4 chips quepan en una sola línea. Para mostrarlos, borra la siguiente regla: */
+.profile-stack .tech-tag i { display: none; }
+.profile-info { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; opacity: 0.85; }
+.profile-info li { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.profile-info + .social-icons { margin-top: 16px; }
+
+/* Encabezado de nivel dentro de una tarjeta de stack (Dominio / Conocimientos básicos) */
+.stack-heading {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+    margin-bottom: -10px;
+}
+
+/* Separación entre proyectos consecutivos */
+.project-card + .project-card { margin-top: 30px; }

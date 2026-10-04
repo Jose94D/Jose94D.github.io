@@ -1,0 +1,44 @@
+{% import "_i18n.html" as i18n %}
+{% import "_components.html" as ui %}
+        <section id="about" class="hero-grid">
+            <div class="profile-sidebar">
+                <div class="profile-avatar-container">
+                    <img src="{{ hero.avatar.src }}" alt="{{ hero.avatar.alt }}" width="{{ hero.avatar.size }}" height="{{ hero.avatar.size }}" loading="eager" fetchpriority="high">
+                </div>
+                <div class="profile-name">{{ hero.name }}</div>
+                {{ i18n.tag('div', hero.role, 'profile-role') }}
+
+                <div class="tech-stack profile-stack">
+                    {% for tag in hero.stack %}
+                    {{ ui.tech_tag(tag) }}
+                    {% endfor %}
+                </div>
+
+                <ul class="profile-info">
+                    {% for item in hero.info %}
+                    <li><i class="{{ item.icon }} stack-icon" aria-hidden="true"></i> {{ i18n.tag('span', item.text) }}</li>
+                    {% endfor %}
+                </ul>
+
+                <div class="social-icons">
+                    {% for s in site.social %}
+                    <a href="{{ s.url }}"{% if s.external %} target="_blank"{% endif %} title="{{ s.title }}" aria-label="{{ s.aria }}">
+                        <i class="{{ s.icon }}" aria-hidden="true"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="hero-content">
+                {{ i18n.tag('h1', hero.about.title) }}
+                {% for p in hero.about.paragraphs %}
+                {{ i18n.tag('p', p) }}
+                {% endfor %}
+
+                <a href="{{ hero.cv.href.es }}" id="btn-cv" class="btn-cv" download
+                   data-href-es="{{ hero.cv.href.es }}"
+                   data-href-en="{{ hero.cv.href.en }}">
+                    <i class="fas fa-download"></i> {{ i18n.tag('span', hero.cv.label) }}
+                </a>
+            </div>
+        </section>

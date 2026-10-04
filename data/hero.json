@@ -1,0 +1,65 @@
+{
+  "name": "José Manuel Dinamarca",
+  "role": {
+    "es": "Desarrollador Full Stack Junior",
+    "en": "Junior Full Stack Developer"
+  },
+  "avatar": {
+    "src": "assets/img/avatar.jpg",
+    "alt": "José Manuel Dinamarca Ortega",
+    "size": 130
+  },
+  "about": {
+    "title": {
+      "es": "Sobre mí",
+      "en": "About Me"
+    },
+    "paragraphs": [
+      {
+        "es": "Desarrollador Full Stack Junior con base en Python/Flask y JavaScript, Ingeniero de Ejecución en Computación e Informática. Vengo de soporte TI y docencia en programación, donde reviso código y acompaño a equipos de estudiantes en el diseño de sus proyectos. He construido aplicaciones web completas por mi cuenta, desde el modelo de datos hasta el panel de administración. Busco mi primer rol como desarrollador Full Stack o Backend, en modalidad remota o híbrida.",
+        "en": "Junior Full Stack Developer with a foundation in Python/Flask and JavaScript, and a degree as a Computer Science & IT Engineer. I come from IT support and programming instruction, where I review code and guide student teams in designing their projects. I have built complete web applications on my own, from the data model to the admin panel. I am looking for my first Full Stack or Backend developer role, remote or hybrid."
+      }
+    ]
+  },
+  "cv": {
+    "label": {
+      "es": "Descargar CV (PDF)",
+      "en": "Download CV (PDF)"
+    },
+    "href": {
+      "es": "assets/docs/CV_Jose_Manuel_Dinamarca_ES.pdf",
+      "en": "assets/docs/CV_Jose_Manuel_Dinamarca_EN.pdf"
+    }
+  },
+  "stack": [
+    {
+      "icon": "fab fa-python",
+      "label": "Python"
+    },
+    {
+      "icon": "fas fa-flask",
+      "label": "Flask"
+    },
+    {
+      "icon": "fab fa-js",
+      "label": "JavaScript"
+    },
+    {
+      "icon": "fas fa-database",
+      "label": "SQL"
+    }
+  ],
+  "info": [
+    {
+      "icon": "fas fa-location-dot",
+      "text": "Linares, Maule, Chile"
+    },
+    {
+      "icon": "fas fa-laptop-house",
+      "text": {
+        "es": "Disponibilidad: remoto o híbrido",
+        "en": "Availability: remote or hybrid"
+      }
+    }
+  ]
+}

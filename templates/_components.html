@@ -1,0 +1,47 @@
+{#- Componentes de UI repetidos en varias secciones. -#}
+{% import "_i18n.html" as i18n %}
+
+{% macro section_title(icon, title) -%}
+<h2 class="section-title"><i class="{{ icon }}" aria-hidden="true"></i> {{ i18n.tag('span', title) }}</h2>
+{%- endmacro %}
+
+{% macro card_title(icon, title) -%}
+<h3 class="card-header-title">
+    <i class="{{ icon }} stack-icon stack-icon--lg" aria-hidden="true"></i>
+    {{ i18n.tag('span', title) }}
+</h3>
+{%- endmacro %}
+
+{% macro stack_group(group) -%}
+{% if group.heading is defined %}
+{{ i18n.tag('div', group.heading, 'stack-heading') }}
+{% endif %}
+<div class="edu-accent-item">
+    {% if group.title is defined %}
+    <strong class="stack-item-title">
+        <i class="{{ group.icon }} stack-icon" aria-hidden="true"></i>
+        {{ i18n.tag('span', group.title) }}
+    </strong>
+    {% endif %}
+    {% for line in group.lines %}
+    {{ i18n.tag('p', line, 'stack-item-desc' ~ ('' if loop.first else ' stack-item-desc--spaced')) }}
+    {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro experience_item(item, first) -%}
+<div class="experience-item {{ 'experience-item-flush' if first else 'experience-item-bordered' }}">
+    {{ i18n.tag('div', item.title, 'experience-title') }}
+    {{ i18n.tag('div', item.company, 'experience-company') }}
+    {{ i18n.tag('div', item.date, 'experience-date') }}
+    <ul class="experience-desc">
+        {% for bullet in item.bullets %}
+        {{ i18n.tag('li', bullet) }}
+        {% endfor %}
+    </ul>
+</div>
+{%- endmacro %}
+
+{% macro tech_tag(tag) -%}
+<span class="tech-tag"><i class="{{ tag.icon }}" aria-hidden="true"></i> {{ tag.label }}</span>
+{%- endmacro %}

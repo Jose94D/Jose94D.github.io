@@ -1,0 +1,47 @@
+{% import "_i18n.html" as i18n %}
+{% import "_components.html" as ui %}
+        <section id="projects">
+            {{ ui.section_title(projects.icon, projects.title) }}
+
+            {% for p in projects.projects %}
+            {# El primer proyecto conserva los ids originales que usa js/main.js #}
+            {% set sfx = '' if loop.first else loop.index %}
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>{{ p.name }}</h3>
+                    {{ i18n.tag('p', p.description, 'project-desc') }}
+                    {% if p.highlights is defined %}
+                    <ul class="experience-desc project-highlights">
+                        {% for h in p.highlights %}
+                        {{ i18n.tag('li', h) }}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    <div class="tech-stack">
+                        {% for tag in p.tags %}
+                        {{ ui.tech_tag(tag) }}
+                        {% endfor %}
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="{{ p.repo.url }}" target="_blank" class="project-link">
+                            <i class="fab fa-github project-link__icon" aria-hidden="true"></i> {{ i18n.tag('span', p.repo.label) }}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-screenshot-container">
+                    <button class="img-carousel-btn prev-btn" id="imgPrevBtn{{ sfx }}" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+
+                    <div class="img-carousel-track" id="img-track{{ sfx }}">
+                        {% for src in p.screenshots %}
+                        <img src="{{ src }}" alt="{{ p.name }} Preview {{ loop.index }}" class="project-screenshot" width="340" height="200" loading="lazy">
+                        {% endfor %}
+                    </div>
+
+                    <button class="img-carousel-btn next-btn" id="imgNextBtn{{ sfx }}" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            {% endfor %}
+        </section>

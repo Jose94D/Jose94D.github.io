@@ -1,0 +1,159 @@
+{
+  "icon": "fas fa-layer-group",
+  "title": {
+    "es": "Stack Técnico y Educación",
+    "en": "Technical Stack & Education"
+  },
+  "cards": [
+    {
+      "icon": "fas fa-code",
+      "title": {
+        "es": "Conocimientos Técnicos",
+        "en": "Technical Knowledge"
+      },
+      "groups": [
+        {
+          "heading": {
+            "es": "Dominio (usadas en mis proyectos)",
+            "en": "Proficient (used in my projects)"
+          },
+          "icon": "fas fa-terminal",
+          "title": "Backend",
+          "lines": [
+            {
+              "es": "Python, Flask, Flask Blueprints, Jinja2, autenticación, paneles de administración, web scraping (Requests, BeautifulSoup4), APScheduler",
+              "en": "Python, Flask, Flask Blueprints, Jinja2, authentication, admin panels, web scraping (Requests, BeautifulSoup4), APScheduler"
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-laptop-code",
+          "title": "Frontend",
+          "lines": [
+            {
+              "es": "JavaScript, HTML5, CSS3, Bootstrap, Chart.js, diseño responsivo",
+              "en": "JavaScript, HTML5, CSS3, Bootstrap, Chart.js, responsive design"
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-database",
+          "title": {
+            "es": "Bases de datos",
+            "en": "Databases"
+          },
+          "lines": [
+            {
+              "es": "SQL, SQLite, PostgreSQL, MySQL, modelado entidad-relación",
+              "en": "SQL, SQLite, PostgreSQL, MySQL, entity-relationship modeling"
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-check-double",
+          "title": {
+            "es": "Buenas prácticas",
+            "en": "Best practices"
+          },
+          "lines": [
+            {
+              "es": "POO, principios SOLID, Clean Code, patrones de diseño, code review, refactorización",
+              "en": "OOP, SOLID principles, Clean Code, design patterns, code review, refactoring"
+            }
+          ]
+        },
+        {
+          "icon": "fas fa-screwdriver-wrench",
+          "title": {
+            "es": "Herramientas",
+            "en": "Tools"
+          },
+          "lines": [
+            "Git, GitHub, VS Code, Linux"
+          ]
+        },
+        {
+          "heading": {
+            "es": "Conocimientos básicos",
+            "en": "Basic knowledge"
+          },
+          "lines": [
+            "Java, C#, Node.js, ReactJS, Docker, MongoDB, Oracle, Power BI",
+            {
+              "es": "Scrum (certificado SFC), metodologías ágiles, Trello, Jira",
+              "en": "Scrum (SFC certified), agile methodologies, Trello, Jira"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "fas fa-graduation-cap",
+      "title": {
+        "es": "Educación y Certificaciones",
+        "en": "Education & Certifications"
+      },
+      "groups": [
+        {
+          "icon": "fas fa-university",
+          "title": {
+            "es": "Ingeniería de Ejecución en Computación e Informática",
+            "en": "Computer Science & IT Engineering (Ingeniería de Ejecución)"
+          },
+          "lines": [
+            "Universidad Católica del Maule (2021 – 2023)"
+          ]
+        },
+        {
+          "icon": "fas fa-award",
+          "title": {
+            "es": "Técnico de Nivel Superior en Programación y Análisis de Sistemas",
+            "en": "Higher-Level Technician in Programming and Systems Analysis"
+          },
+          "lines": [
+            "CFT San Agustín (2018 – 2021)"
+          ]
+        },
+        {
+          "icon": "fas fa-chart-bar",
+          "title": "Microsoft Power BI",
+          "lines": [
+            {
+              "es": "Santander Open Academy · Octubre 2026",
+              "en": "Santander Open Academy · October 2026"
+            },
+            "ID: OA-2026-1001003269215"
+          ]
+        },
+        {
+          "icon": "fas fa-certificate",
+          "title": "Scrum Fundamentals Certified (SFC)",
+          "lines": [
+            {
+              "es": "SCRUMstudy · Agosto 2024",
+              "en": "SCRUMstudy · August 2024"
+            },
+            "ID: 1045081"
+          ]
+        },
+        {
+          "icon": "fas fa-language",
+          "title": {
+            "es": "Idiomas",
+            "en": "Languages"
+          },
+          "lines": [
+            {
+              "es": "Español nativo",
+              "en": "Spanish (native)"
+            },
+            {
+              "es": "Inglés intermedio B2 (oral y escrito)",
+              "en": "English, intermediate B2 (spoken and written)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

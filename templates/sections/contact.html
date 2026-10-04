@@ -1,0 +1,34 @@
+{% import "_i18n.html" as i18n %}
+{% set f = contact.form %}
+{% set msg = f.messages %}
+        <section id="contact">
+            <div class="contact-grid">
+                <div class="contact-text">
+                    {{ i18n.tag('h2', contact.title) }}
+                    {{ i18n.tag('p', contact.text) }}
+                </div>
+                <form id="contact-form" action="{{ f.action }}" method="POST" class="contact-form">
+                    {% for field in f.fields %}
+                    {% if field.tag == 'textarea' %}
+                    <textarea name="{{ field.name }}" required {{ i18n.placeholder(field.placeholder) }} {{ i18n.aria(field.aria) }}></textarea>
+                    {% else %}
+                    <input type="{{ field.type }}" name="{{ field.name }}" required {{ i18n.placeholder(field.placeholder) }} {{ i18n.aria(field.aria) }}>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% set spinner = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> ' %}
+                    <button type="submit" id="submit-btn" class="btn-submit"
+                        {{ i18n.attrs(f.submit.label) }}
+                        data-es-loading="{{ spinner ~ f.submit.loading.es }}"
+                        data-en-loading="{{ spinner ~ f.submit.loading.en }}"
+                        {{ i18n.aria(f.submit.aria) }}>{{ f.submit.label.es }}</button>
+
+                    <div id="form-success" class="form-success-message" aria-live="polite"
+                        {{ i18n.attrs(msg.success) }}
+                        data-es-error="{{ msg.error.es }}" data-en-error="{{ msg.error.en }}"
+                        data-es-connection-error="{{ msg.connection_error.es }}" data-en-connection-error="{{ msg.connection_error.en }}">
+                        {{ msg.success.es }}
+                    </div>
+                </form>
+            </div>
+        </section>

@@ -1,0 +1,25 @@
+{#- Macros de internacionalización: un campo es {"es": ..., "en": ...} o un string plano. -#}
+
+{% macro attrs(f) -%}
+data-es="{{ f.es }}" data-en="{{ f.en }}"
+{%- endmacro %}
+
+{% macro text(f) -%}
+{{ f if f is string else f.es }}
+{%- endmacro %}
+
+{% macro tag(name, f, cls='') -%}
+<{{ name }}{% if cls %} class="{{ cls }}"{% endif %}{% if f is not string %} {{ attrs(f) }}{% endif %}>{{ text(f) }}</{{ name }}>
+{%- endmacro %}
+
+{% macro aria(f) -%}
+aria-label="{{ f.es }}" data-es-aria="{{ f.es }}" data-en-aria="{{ f.en }}"
+{%- endmacro %}
+
+{% macro placeholder(f) -%}
+placeholder="{{ f.es }}" data-es-placeholder="{{ f.es }}" data-en-placeholder="{{ f.en }}"
+{%- endmacro %}
+
+{% macro meta(key, name, f, id='') -%}
+<meta {{ key }}="{{ name }}"{% if id %} id="{{ id }}"{% endif %} content="{{ f.es }}" {{ attrs(f) }}>
+{%- endmacro %}

@@ -1,0 +1,25 @@
+{
+  "title": { "es": "Conversemos sobre tu próximo proyecto.", "en": "Let's talk about your next project." },
+  "text": {
+    "es": "Hablemos de desarrollo, consultoría o nuevas oportunidades profesionales. Escríbeme y hagamos realidad tu idea.",
+    "en": "Let's talk about development, consulting, or new professional opportunities. Drop me a message and let's bring your idea to life."
+  },
+  "form": {
+    "action": "https://formspree.io/f/mljeldzj",
+    "fields": [
+      { "tag": "input", "type": "text", "name": "name", "placeholder": { "es": "Nombre", "en": "Name" }, "aria": { "es": "Nombre", "en": "Name" } },
+      { "tag": "input", "type": "email", "name": "email", "placeholder": { "es": "Correo electrónico", "en": "Email address" }, "aria": { "es": "Correo electrónico", "en": "Email address" } },
+      { "tag": "textarea", "name": "message", "placeholder": { "es": "Cuéntame sobre tu proyecto...", "en": "Tell me about your project..." }, "aria": { "es": "Mensaje", "en": "Message" } }
+    ],
+    "submit": {
+      "label": { "es": "Enviar mensaje", "en": "Send message" },
+      "loading": { "es": "Enviando...", "en": "Sending..." },
+      "aria": { "es": "Enviar mensaje de contacto", "en": "Send contact message" }
+    },
+    "messages": {
+      "success": { "es": "¡Mensaje enviado con éxito! Gracias por contactarte. Te responderé pronto.", "en": "Message sent successfully! Thanks for reaching out. I'll get back to you soon." },
+      "error": { "es": "Hubo un error al enviar el mensaje. Inténtalo de nuevo.", "en": "There was a problem submitting your form. Please try again." },
+      "connection_error": { "es": "Error de conexión. Inténtalo más tarde.", "en": "Connection error. Please try again later." }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "icon": "fas fa-briefcase",
+  "title": {
+    "es": "Experiencia Profesional",
+    "en": "Professional Experience"
+  },
+  "cards": [
+    {
+      "layout": "card-flex-start",
+      "jobs": [
+        {
+          "title": {
+            "es": "Consultor de proyectos de TI",
+            "en": "IT Project Consultant"
+          },
+          "company": {
+            "es": "Independiente · Tiempo completo",
+            "en": "Self Employed · Full-time"
+          },
+          "date": {
+            "es": "Mayo 2024 - Presente",
+            "en": "May 2024 - Present"
+          },
+          "bullets": [
+            {
+              "es": "Prestación de servicios integrales de consultoría TI y administración de redes para organizaciones locales.",
+              "en": "Deliver comprehensive IT consulting and network administration services for local organizations."
+            },
+            {
+              "es": "Implementación de soluciones de impresión centralizada y configuración de sistemas de facturación electrónica para agilizar las operaciones diarias.",
+              "en": "Implement centralized printing solutions and configure electronic billing systems to streamline daily operations."
+            },
+            {
+              "es": "Mantenimiento de hardware a medida e integración de software para optimizar los entornos informáticos de los clientes.",
+              "en": "Provide tailored hardware maintenance and software integration to optimize clients' computing environments."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "card-space-between",
+      "jobs": [
+        {
+          "title": {
+            "es": "Docente de Programación",
+            "en": "Programming Instructor"
+          },
+          "company": "CFT San Agustín / CFT Estatal del Maule",
+          "date": {
+            "es": "Marzo 2024 – Presente",
+            "en": "March 2024 – Present"
+          },
+          "bullets": [
+            {
+              "es": "Reviso y evalúo el código de más de 40 proyectos de software de estudiantes, con foco en principios SOLID, Clean Code y patrones de diseño.",
+              "en": "Review and assess the code of over 40 student software projects, focusing on SOLID principles, Clean Code, and design patterns."
+            },
+            {
+              "es": "Guío a equipos de estudiantes en el diseño de arquitectura, la refactorización y la depuración de sus proyectos.",
+              "en": "Guide student teams in architecture design, refactoring, and debugging of their projects."
+            },
+            {
+              "es": "Diseño material y guías técnicas para Seguridad de Software, Programación Avanzada II, y Gestión de Servicios TI.",
+              "en": "Design course materials and technical guides for Software Security, Advanced Programming II, and IT Service Management."
+            }
+          ]
+        },
+        {
+          "title": {
+            "es": "Técnico Informático y Soporte TI",
+            "en": "IT Technician & Support"
+          },
+          "company": "Liceo Nuestra Señora del Rosario",
+          "date": {
+            "es": "Marzo 2023 – Febrero 2024",
+            "en": "March 2023 – February 2024"
+          },
+          "bullets": [
+            {
+              "es": "Administré servidores, redes e infraestructura TI para 150 usuarios.",
+              "en": "Administered servers, networks, and IT infrastructure for 150 users."
+            },
+            {
+              "es": "Configuré políticas de seguridad con firewall PfSense, reduciendo en 35% los incidentes de red.",
+              "en": "Configured security policies with PfSense firewall, reducing network incidents by 35%."
+            },
+            {
+              "es": "Resolví fallas de hardware y software, reduciendo en 20% los tiempos de inactividad.",
+              "en": "Resolved hardware and software failures, reducing downtime by 20%."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

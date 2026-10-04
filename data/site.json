@@ -1,0 +1,143 @@
+{
+  "lang": "es",
+  "meta": {
+    "url": "https://jose94d.github.io/",
+    "image": "https://jose94d.github.io/preview.jpg",
+    "google_site_verification": "19XCE3zJjSXNf-7TdAcSUYZN12dsNW2GK9_PqxUCNUo",
+    "favicon": "assets/icons/favicon.png",
+    "title": {
+      "es": "José Manuel Dinamarca Ortega | Desarrollador Full Stack Junior",
+      "en": "José Manuel Dinamarca Ortega | Junior Full Stack Developer"
+    },
+    "description": {
+      "es": "Desarrollador Full Stack Junior en Python, Flask y JavaScript. Proyectos, experiencia y habilidades. Busco mi primer rol Full Stack o Backend, remoto o híbrido.",
+      "en": "Junior Full Stack Developer in Python, Flask, and JavaScript. Projects, experience, and skills. Looking for my first Full Stack or Backend role, remote or hybrid."
+    }
+  },
+  "assets": {
+    "font_awesome": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
+    "google_fonts": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap",
+    "stylesheets": [
+      "css/global.css",
+      "css/layout.css",
+      "css/components.css",
+      "css/responsive.css"
+    ],
+    "scripts": [
+      "js/main.js",
+      "js/carousel.js"
+    ]
+  },
+  "brand": {
+    "first": "José Manuel",
+    "last": "Dinamarca"
+  },
+  "nav": [
+    {
+      "id": "about",
+      "label": {
+        "es": "Perfil",
+        "en": "Profile"
+      }
+    },
+    {
+      "id": "projects",
+      "label": {
+        "es": "Proyectos",
+        "en": "Projects"
+      }
+    },
+    {
+      "id": "experience",
+      "label": {
+        "es": "Experiencia",
+        "en": "Experience"
+      }
+    },
+    {
+      "id": "skills",
+      "label": {
+        "es": "Habilidades",
+        "en": "Skills"
+      }
+    },
+    {
+      "id": "contact",
+      "label": {
+        "es": "Contacto",
+        "en": "Contact"
+      }
+    }
+  ],
+  "lang_toggle": {
+    "label": "EN",
+    "aria": {
+      "es": "Cambiar idioma a Inglés",
+      "en": "Switch language to Spanish"
+    }
+  },
+  "social": [
+    {
+      "title": "LinkedIn",
+      "icon": "fab fa-linkedin-in",
+      "url": "https://linkedin.com/in/jose-dinamarca-ortega",
+      "aria": "Visitar perfil de LinkedIn de José Manuel",
+      "external": true
+    },
+    {
+      "title": "GitHub",
+      "icon": "fab fa-github",
+      "url": "https://github.com/Jose94D",
+      "aria": "Visitar perfil de GitHub de José Manuel",
+      "external": true
+    },
+    {
+      "title": "Email",
+      "icon": "fas fa-envelope",
+      "url": "mailto:jose.m.dinamarca@gmail.com",
+      "aria": "Enviar correo electrónico a José Manuel",
+      "external": false
+    }
+  ],
+  "footer": {
+    "es": "Diseñado por José Manuel Dinamarca Ortega",
+    "en": "Designed by José Manuel Dinamarca Ortega"
+  },
+  "sections": [
+    "hero",
+    "projects",
+    "experience",
+    "skills"
+  ],
+  "person": {
+    "name": "José Manuel Dinamarca Ortega",
+    "job_title": "Desarrollador Full Stack Junior",
+    "email": "jose.m.dinamarca@gmail.com",
+    "address": {
+      "locality": "Linares",
+      "region": "Maule",
+      "country": "CL"
+    },
+    "alumni_of": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Católica del Maule"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "CFT San Agustín"
+      }
+    ],
+    "knows_about": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "SQL",
+      "SQLite",
+      "Jinja2",
+      "Web scraping",
+      "SOLID",
+      "Clean Code"
+    ]
+  }
+}

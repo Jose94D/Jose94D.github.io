@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+{% include "partials/head.html" %}
+<body>
+
+    <div class="ambient-glow"></div>
+
+{% include "partials/navbar.html" %}
+
+    <div class="main-container">
+
+{% for name in site.sections %}
+{% include "sections/" ~ name ~ ".html" %}
+{% endfor %}
+
+        <hr class="section-divider">
+
+{% include "sections/contact.html" %}
+
+    </div>
+
+{% include "partials/footer.html" %}
+
+    {% for src in site.assets.scripts %}
+    <script type="module" src="{{ src }}"></script>
+    {% endfor %}
+
+</body>
+</html>
